@@ -14,7 +14,7 @@ A crowd-verified safety map that highlights unsafe areas and provides AI-based e
 - Safe-route suggestions
 
 ## Tech Stack
-React, Firebase Firestore, Mapbox
+Html, CSS, JavaScript, Firebase Firestore, Mapbox
 
 ## Demo Flow
 1. User reports unsafe location
