@@ -316,4 +316,9 @@ article:hover {
   box-shadow: -4px 4px 12px rgba(0,0,0,0.4);
 }
 
-
+/* Hide on small screens */
+@media (max-width: 768px) {
+  .social-bar {
+    display: none;
+  }
+}
