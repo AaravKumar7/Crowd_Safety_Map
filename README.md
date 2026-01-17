@@ -1,4 +1,5 @@
 # Crowd_Safety_Map
+<<<<<<< HEAD
 SafeRoute AI – Crowd-verified safety map for hackathons
 
 ## Problem
@@ -21,3 +22,6 @@ Html, CSS, JavaScript, Firebase Firestore, Mapbox
 2. Others verify the report
 3. Area turns red on map
 4. AI assistant gives guidance
+=======
+SafeRoute AI – Crowd-verified safety map for hackathons
+>>>>>>> backend
