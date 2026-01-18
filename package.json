@@ -2,6 +2,7 @@
   "name": "crowd_safety_map",
   "version": "1.0.0",
   "description": "SafeRoute AI – Crowd-verified safety map for hackathons",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -13,7 +14,6 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
   "bugs": {
     "url": "https://github.com/AaravKumar7/Crowd_Safety_Map/issues"
   },
