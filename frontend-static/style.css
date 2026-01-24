@@ -1,0 +1,17 @@
+#map {
+  height: 350px;
+  width: 100%;
+  border: 1px solid #ccc;
+  margin-top: 15px;
+}
+#emergency-buttons button {
+  margin: 6px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+#emergency-response {
+  margin-top: 15px;
+  padding: 10px;
+  border: 1px solid #ccc;
+}

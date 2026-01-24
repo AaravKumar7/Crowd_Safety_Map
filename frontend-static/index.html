@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Crowd Safety Map</title>
+
+  <!-- Leaflet CSS -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet/dist/leaflet.css"
+  />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<script src="emergencyAI.js"></script>
+
+<body>
+
+  <h2>Crowd Safety Map</h2>
+
+  <div id="map"></div>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+  <script src="fallbackUnsafeAreas.js"></script>
+  <script src="map.js"></script>
+
+  <h3>Emergency Assistance</h3>
+
+<div id="emergency-buttons">
+  <button onclick="handleEmergency('unsafe')">Unsafe Area</button>
+  <button onclick="handleEmergency('medical')">Medical Emergency</button>
+  <button onclick="handleEmergency('fire')">Fire Emergency</button>
+</div>
+
+<div id="emergency-response"></div>
+
+
+</body>
+</html>
