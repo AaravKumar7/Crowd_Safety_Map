@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Safety Map | SafeZone</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</head>
+
+<body>
+
+  <!-- FLOATING SOS BUTTON -->
+  <button class="sos" onclick="alert('Emergency Alert Sent!')">SOS</button>
+
+  <!-- TOP NAV -->
+  <nav class="top-nav">
+    <div class="logo"><i class="fas fa-shield-halved"></i> SafeZone</div>
+    <div class="nav-links">
+      <a href="Homepage.html">Home</a>
+      <a href="saftyMap.html" class="active">Map</a>
+      <a href="report.html">Report</a>
+      <a href="profile.html">Profile</a>
+    </div>
+  </nav>
+
+  <!-- PAGE -->
+  <div class="page">
+    <div class="layout">
+
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+        <a href="#" class="side-btn danger"><i class="fas fa-triangle-exclamation"></i> Emergency Help</a>
+        <a href="saftyMap.html" class="side-btn active"><i class="fas fa-map-location-dot"></i> Safety Map</a>
+        <a href="report.html" class="side-btn"><i class="fas fa-file-pen"></i> Report Incident</a>
+        <a href="#" class="side-btn"><i class="fas fa-book-medical"></i> Safety Guide</a>
+        <a href="#" class="side-btn"><i class="fas fa-phone-flip"></i> Emergency Contacts</a>
+      </aside>
+
+      <!-- CONTENT -->
+      <main class="content">
+
+        <section class="hero">
+          <h1>Safety Map</h1>
+          <p><i class="fas fa-satellite"></i> View real-time safety data and reported incidents in your area.</p>
+          <span class="status live"><i class="fas fa-signal"></i> Live Status</span>
+        </section>
+
+        <!-- MAP FILTERS -->
+        <div class="map-controls">
+          <button class="filter-btn active">All Incidents</button>
+          <button class="filter-btn">High Risk</button>
+          <button class="filter-btn">Medical</button>
+          <button class="filter-btn">Police Help</button>
+          <button class="filter-btn">Safe Zones</button>
+        </div>
+
+        <!-- MAP -->
+        <section>
+          <div id="map"></div>
+        </section>
+
+        <!-- LEGEND -->
+        <section class="map-legend">
+          <div class="legend-item"><span class="dot high"></span> High Risk Area</div>
+          <div class="legend-item"><span class="dot medium"></span> Moderate Risk</div>
+          <div class="legend-item"><span class="dot low"></span> Verified Safe Zone</div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>SafeZone</h3>
+        <p>Providing real-time safety insights to keep our community protected.</p>
+      </div>
+      <div class="footer-nav">
+        <h4>Explore</h4>
+        <ul class="footer-links">
+          <li><a href="Homepage.html">Home</a></li>
+          <li><a href="saftyMap.html">Safety Map</a></li>
+          <li><a href="report.html">Report Incident</a></li>
+          <li><a href="#">Help Center</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Emergency</h4>
+        <p>Police: 100</p>
+        <p>Ambulance: 102</p>
+        <p>SafeZone: 1800-123-SAFE</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 SafeZone. Empowering safe navigation.
+    </div>
+  </footer>
+
+  <!-- MAP SCRIPT -->
+  <script>
+    // Initialize map (Delhi)
+    var map = L.map('map').setView([28.6139, 77.2090], 13);
+
+    // Dark Map tiles (using CartoDB Dark Matter)
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+      attribution: '© OpenStreetMap contributors © CARTO'
+    }).addTo(map);
+
+    // High risk zone
+    L.circle([28.6129, 77.2295], {
+      color: '#ef4444',
+      fillColor: '#ef4444',
+      fillOpacity: 0.4,
+      radius: 400
+    }).addTo(map).bindPopup("<b>High Risk Area:</b> Frequent reports of pickpocketing.");
+
+    // Medium risk zone
+    L.circle([28.6200, 77.2100], {
+      color: '#f59e0b',
+      fillColor: '#f59e0b',
+      fillOpacity: 0.3,
+      radius: 350
+    }).addTo(map).bindPopup("<b>Moderate Risk:</b> Low lighting reported in this block.");
+
+    // Safe zone
+    L.circle([28.6050, 77.1950], {
+      color: '#22c55e',
+      fillColor: '#22c55e',
+      fillOpacity: 0.3,
+      radius: 300
+    }).addTo(map).bindPopup("<b>Verified Safe Zone:</b> High police presence and well-lit.");
+  </script>
+
+</body>
+
+</html>

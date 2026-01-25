@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SafeZone | Stay Aware. Stay Safe.</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+
+<body>
+
+  <!-- FLOATING SOS BUTTON -->
+  <button class="sos" onclick="alert('Emergency Alert Sent!')">SOS</button>
+
+  <!-- FLOATING SOCIAL MEDIA BAR -->
+  <div class="social-bar">
+    <a href="#" class="social linkedin" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+    <a href="#" class="social youtube" title="YouTube"><i class="fab fa-youtube"></i></a>
+    <a href="#" class="social whatsapp" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    <a href="#" class="social twitter" title="Twitter"><i class="fab fa-x-twitter"></i></a>
+  </div>
+
+  <!-- TOP NAVBAR -->
+  <nav class="top-nav">
+    <div class="logo"><i class="fas fa-shield-halved"></i> SafeZone</div>
+    <div class="nav-links">
+      <a href="Homepage.html" class="active">Home</a>
+      <a href="saftyMap.html">Map</a>
+      <a href="report.html">Report</a>
+      <a href="profile.html">Profile</a>
+    </div>
+  </nav>
+
+  <!-- PAGE WRAPPER -->
+  <div class="page">
+    <div class="layout">
+
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+        <a href="#" class="side-btn danger"><i class="fas fa-triangle-exclamation"></i> Emergency Help</a>
+        <a href="saftyMap.html" class="side-btn"><i class="fas fa-map-location-dot"></i> Safety Map</a>
+        <a href="report.html" class="side-btn"><i class="fas fa-file-pen"></i> Report Incident</a>
+        <a href="#" class="side-btn"><i class="fas fa-book-medical"></i> Safety Guide</a>
+        <a href="#" class="side-btn"><i class="fas fa-phone-flip"></i> Emergency Contacts</a>
+      </aside>
+
+      <!-- CONTENT -->
+      <main class="content">
+
+        <!-- HERO -->
+        <section class="hero">
+          <h1>Stay Aware. Stay Safe.</h1>
+          <p><i class="fas fa-location-dot"></i> Near Connaught Place, New Delhi</p>
+          <span class="status caution"><i class="fas fa-circle-exclamation"></i> Moderate Risk Area</span>
+        </section>
+
+        <!-- QUICK STATS / UPDATES -->
+        <section>
+          <h2><i class="fas fa-bullhorn"></i> Safety Updates</h2>
+          <div class="card-grid">
+            <article>
+              <h3>⚠️ Pickpocketing Alert</h3>
+              <p>Increased activity reported near CP Inner Circle between 6 PM - 10 PM. Secure your belongings.</p>
+              <span class="status" style="background: rgba(239, 68, 68, 0.1); color: #ef4444; margin-top: 10px;">High Alert</span>
+            </article>
+            <article>
+              <h3>🚧 Road Construction</h3>
+              <p>Night-time repairs on Janpath. Expect low visibility and minor diversions. Drive safely.</p>
+              <span class="status" style="background: rgba(245, 158, 11, 0.1); color: #f59e0b; margin-top: 10px;">Informational</span>
+            </article>
+          </div>
+        </section>
+
+        <!-- RECENT ALERTS -->
+        <section>
+          <h2><i class="fas fa-clock-rotate-left"></i> Recent Alerts Near You</h2>
+          <div class="card alert high">
+            <div class="alert-content">
+              <h3>Harassment Reported</h3>
+              <p>Near Central Market • 20 mins ago</p>
+            </div>
+            <i class="fas fa-chevron-right"></i>
+          </div>
+
+          <div class="card alert medium">
+            <div class="alert-content">
+              <h3>Suspicious Person</h3>
+              <p>Near Metro Station Exit 2 • 1 hour ago</p>
+            </div>
+            <i class="fas fa-chevron-right"></i>
+          </div>
+
+          <div class="card alert low">
+            <div class="alert-content">
+              <h3>Maintenance Work</h3>
+              <p>Main road lighting repair • 3 hours ago</p>
+            </div>
+            <i class="fas fa-chevron-right"></i>
+          </div>
+        </section>
+
+        <section>
+            <h2><i class="fas fa-lightbulb"></i> Quick Safety Tips</h2>
+            <div class="tip-list">
+                <div class="tip">Stay in well-lit and crowded areas at night.</div>
+                <div class="tip">Keep your emergency contacts on speed dial.</div>
+                <div class="tip">Trust your instincts; if it feels unsafe, leave.</div>
+                <div class="tip">Share your live location with family/friends.</div>
+            </div>
+        </section>
+
+        <!-- ABOUT -->
+        <section class="about-section">
+          <div class="card">
+              <h2>About SafeZone</h2>
+              <p>SafeZone is a crowd-verified safety platform that helps people stay aware of unsafe areas and receive instant guidance during emergencies.</p>
+              <p style="margin-top: 15px;">Reports are submitted by verified users, making safety information transparent, reliable, and real-time.</p>
+          </div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>SafeZone</h3>
+        <p>Your companion for a safer commute. empowering communities with real-time safety data.</p>
+      </div>
+      <div class="footer-nav">
+        <h4>Explore</h4>
+        <ul class="footer-links">
+          <li><a href="Homepage.html">Home</a></li>
+          <li><a href="saftyMap.html">Safety Map</a></li>
+          <li><a href="report.html">Report Incident</a></li>
+          <li><a href="#">Safety Guide</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p>📧 support@safezone.com</p>
+        <p>📞 +91 98765 43210</p>
+        <p>📍 Delhi, India</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 SafeZone. Built for public safety & awareness.
+    </div>
+  </footer>
+
+</body>
+</html>
