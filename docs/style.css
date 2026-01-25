@@ -1,0 +1,89 @@
+body {
+  margin: 0;
+  background-color: #0f172a;
+  color: #e5e7eb;  
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 12px;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  margin-bottom: 15px;
+  color: #f9fafb;
+}
+
+header p {
+  color: #9ca3af;
+  margin-top: -10px;
+}
+
+#map {
+  height: 350px;
+  width: 100%;
+  border: 1px solid #334155;
+  margin-top: 10px;
+  border-radius: 6px;
+}
+
+#emergency-buttons {
+  margin-top: 20px;
+}
+
+#emergency-buttons button {
+  margin: 6px;
+  padding: 10px 14px;
+  font-size: 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#emergency-buttons button:nth-child(1) {
+  background-color: #f59e0b;
+  color: #111827;
+}
+
+#emergency-buttons button:nth-child(2) {
+  background-color: #3b82f6;
+  color: white;
+}
+
+#emergency-buttons button:nth-child(3) {
+  background-color: #ef4444;
+  color: white;
+}
+
+#emergency-response {
+  margin-top: 15px;
+  padding: 14px;
+  background-color: #020617;
+  border-left: 4px solid #38bdf8;
+  border-radius: 6px;
+}
+
+#emergency-response h4 {
+  margin-top: 0;
+  color: #f8fafc;
+}
+
+#emergency-response small {
+  color: #94a3b8;
+}
+
+.disclaimer-banner {
+  margin: 10px 0;
+  padding: 10px;
+  background-color: #1e293b;
+  border-left: 4px solid #facc15;
+  color: #fde68a;
+  font-size: 13px;
+}
+
+button:focus {
+  outline: 3px solid #38bdf8;
+}

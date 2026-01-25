@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Crowd Safety Map</title>
+
+  <!-- Leaflet CSS -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet/dist/leaflet.css"
+  />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<div class="disclaimer-banner">
+  ⚠️ This tool provides advisory guidance only and does not replace official emergency services.
+</div>
+
+<script src="emergencyAI.js"></script>
+
+<body>
+  <div class="container">
+
+    <header>
+      <h1>Crowd Safety Map</h1>
+      <p>Community-verified safety alerts & emergency guidance</p>
+    </header>
+
+    <h2>Unsafe Areas Map</h2>
+
+    <p style="color:#9ca3af;font-size:14px;">
+      Marked areas indicate reported or previously flagged safety risks.
+    </p>
+
+    <div id="map"></div>
+
+    <p style="font-size:12px;color:#64748b;">
+      Demo mode · Showing cached safety data
+    </p>
+
+    <h3>Emergency Assistance</h3>
+
+    <div id="emergency-buttons">
+      <button onclick="handleEmergency('unsafe')">Unsafe Area</button>
+      <button onclick="handleEmergency('medical')">Medical Emergency</button>
+      <button onclick="handleEmergency('fire')">Fire Emergency</button>
+    </div>
+
+    <div id="emergency-response">
+      <em>Select an emergency type to get guidance.</em>
+    </div>
+
+  </div>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+  <!-- App scripts -->
+  <script src="fallbackUnsafeAreas.js"></script>
+  <script src="map.js"></script>
+  <script src="emergencyAI.js"></script>
+
+  <hr style="border-color:#334155;margin-top:20px;">
+
+  <p style="font-size:13px;color:#9ca3af;">
+    How it works: Crowd signals and historical safety alerts are visualized on a map. 
+    Emergency actions provide instant, non-chat guidance.
+  </p>
+
+</body>
+
+</html>
