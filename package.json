@@ -1,7 +1,7 @@
 {
   "name": "crowd_safety_map",
   "version": "1.0.0",
-  "description": "SafeRoute AI – Crowd-verified safety map for hackathons",
+  "description": "SafeRoute AI : Crowd-verified safety map for hackathons",
   "type": "module",
   "main": "index.js",
   "scripts": {
