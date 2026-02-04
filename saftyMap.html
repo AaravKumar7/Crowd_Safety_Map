@@ -14,10 +14,11 @@
 <body>
 
   <!-- FLOATING SOS BUTTON -->
-  <button class="sos" onclick="alert('Emergency Alert Sent!')">SOS</button>
+  <button class="sos">SOS</button>
 
   <!-- TOP NAV -->
   <nav class="top-nav">
+    <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
     <div class="logo"><i class="fas fa-shield-halved"></i> SafeZone</div>
     <div class="nav-links">
       <a href="Homepage.html">Home</a>
@@ -25,32 +26,75 @@
       <a href="report.html">Report</a>
       <a href="profile.html">Profile</a>
     </div>
+    <div class="nav-controls">
+      <div class="search-container">
+        <i class="fas fa-search"></i>
+        <input type="text" placeholder="Search safety guides..." id="navSearch">
+      </div>
+      <button class="nav-icon-btn" id="notifBtn">
+        <i class="fas fa-bell"></i>
+        <span class="badge">2</span>
+      </button>
+      <div class="user-avatar" onclick="location.href='profile.html'">
+        <img src="https://ui-avatars.com/api/?name=Ashutosh+Singh&background=ef4444&color=fff" alt="User">
+      </div>
+    </div>
   </nav>
+
+  <!-- NOTIFICATION DROPDOWN -->
+  <div class="notification-dropdown" id="notifDropdown">
+    <div class="notification-header">
+      <h4>Notifications</h4>
+      <button class="nav-icon-btn" style="font-size: 14px; color: var(--accent-color);">Mark all as read</button>
+    </div>
+    <div class="notification-item unread">
+      <h4>⚠️ High Risk Alert</h4>
+      <p>Increased activity reported near CP Inner Circle.</p>
+      <span class="text-xs" style="opacity: 0.6;">10 mins ago</span>
+    </div>
+    <div class="notification-item unread">
+      <h4>🚧 Construction Update</h4>
+      <p>Janpath road repairs scheduled tonight.</p>
+      <span class="text-xs" style="opacity: 0.6;">1 hour ago</span>
+    </div>
+  </div>
 
   <!-- PAGE -->
   <div class="page">
     <div class="layout">
 
       <!-- SIDEBAR -->
-      <aside class="sidebar">
-        <a href="#" class="side-btn danger"><i class="fas fa-triangle-exclamation"></i> Emergency Help</a>
+      <aside class="sidebar" id="sidebar">
+        <a href="emergency.html" class="side-btn danger"><i class="fas fa-triangle-exclamation"></i> Emergency Help</a>
         <a href="saftyMap.html" class="side-btn active"><i class="fas fa-map-location-dot"></i> Safety Map</a>
         <a href="report.html" class="side-btn"><i class="fas fa-file-pen"></i> Report Incident</a>
-        <a href="#" class="side-btn"><i class="fas fa-book-medical"></i> Safety Guide</a>
-        <a href="#" class="side-btn"><i class="fas fa-phone-flip"></i> Emergency Contacts</a>
+        <a href="guide.html" class="side-btn"><i class="fas fa-book-medical"></i> Safety Guide</a>
+        <a href="contact.html" class="side-btn"><i class="fas fa-phone-flip"></i> Emergency Contacts</a>
       </aside>
 
       <!-- CONTENT -->
       <main class="content">
 
-        <section class="hero">
+        <!-- LIVE TICKER -->
+        <div class="safety-ticker">
+          <span class="ticker-label"><i class="fas fa-tower-broadcast"></i> Live</span>
+          <div class="ticker-content">
+            <span>🚨 Pickpocketing activity reported near CP Inner Circle.</span>
+            <span>🚧 Road repairs on Janpath tonight. Drive safely.</span>
+            <span>✅ Metro Station Exit 2 verified as Safe Zone.</span>
+            <span>📢 New Safety Guide: 'Night Commute' now available.</span>
+          </div>
+        </div>
+
+        <!-- HEADER -->
+        <section class="hero reveal">
           <h1>Safety Map</h1>
           <p><i class="fas fa-satellite"></i> View real-time safety data and reported incidents in your area.</p>
           <span class="status live"><i class="fas fa-signal"></i> Live Status</span>
         </section>
 
         <!-- MAP FILTERS -->
-        <div class="map-controls">
+        <div class="map-controls reveal-group">
           <button class="filter-btn active">All Incidents</button>
           <button class="filter-btn">High Risk</button>
           <button class="filter-btn">Medical</button>
@@ -59,12 +103,13 @@
         </div>
 
         <!-- MAP -->
-        <section>
+        <section class="reveal" style="position: relative;">
+          <button id="locateBtn" class="map-overlay-btn"><i class="fas fa-crosshairs"></i> Locate Me</button>
           <div id="map"></div>
         </section>
 
         <!-- LEGEND -->
-        <section class="map-legend">
+        <section class="map-legend reveal">
           <div class="legend-item"><span class="dot high"></span> High Risk Area</div>
           <div class="legend-item"><span class="dot medium"></span> Moderate Risk</div>
           <div class="legend-item"><span class="dot low"></span> Verified Safe Zone</div>
@@ -87,7 +132,7 @@
           <li><a href="Homepage.html">Home</a></li>
           <li><a href="saftyMap.html">Safety Map</a></li>
           <li><a href="report.html">Report Incident</a></li>
-          <li><a href="#">Help Center</a></li>
+          <li><a href="guide.html">Safety Guide</a></li>
         </ul>
       </div>
       <div class="footer-contact">
@@ -102,41 +147,7 @@
     </div>
   </footer>
 
-  <!-- MAP SCRIPT -->
-  <script>
-    // Initialize map (Delhi)
-    var map = L.map('map').setView([28.6139, 77.2090], 13);
-
-    // Dark Map tiles (using CartoDB Dark Matter)
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-      attribution: '© OpenStreetMap contributors © CARTO'
-    }).addTo(map);
-
-    // High risk zone
-    L.circle([28.6129, 77.2295], {
-      color: '#ef4444',
-      fillColor: '#ef4444',
-      fillOpacity: 0.4,
-      radius: 400
-    }).addTo(map).bindPopup("<b>High Risk Area:</b> Frequent reports of pickpocketing.");
-
-    // Medium risk zone
-    L.circle([28.6200, 77.2100], {
-      color: '#f59e0b',
-      fillColor: '#f59e0b',
-      fillOpacity: 0.3,
-      radius: 350
-    }).addTo(map).bindPopup("<b>Moderate Risk:</b> Low lighting reported in this block.");
-
-    // Safe zone
-    L.circle([28.6050, 77.1950], {
-      color: '#22c55e',
-      fillColor: '#22c55e',
-      fillOpacity: 0.3,
-      radius: 300
-    }).addTo(map).bindPopup("<b>Verified Safe Zone:</b> High police presence and well-lit.");
-  </script>
-
+  <script src="script.js"></script>
 </body>
 
 </html>
