@@ -12,10 +12,11 @@
 <body>
 
   <!-- FLOATING SOS BUTTON -->
-  <button class="sos" onclick="alert('Emergency Alert Sent!')">SOS</button>
+  <button class="sos">SOS</button>
 
   <!-- TOP NAVBAR -->
   <nav class="top-nav">
+    <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
     <div class="logo"><i class="fas fa-shield-halved"></i> SafeZone</div>
     <div class="nav-links">
       <a href="Homepage.html">Home</a>
@@ -23,34 +24,76 @@
       <a href="report.html" class="active">Report</a>
       <a href="profile.html">Profile</a>
     </div>
+    <div class="nav-controls">
+      <div class="search-container">
+        <i class="fas fa-search"></i>
+        <input type="text" placeholder="Search safety guides..." id="navSearch">
+      </div>
+      <button class="nav-icon-btn" id="notifBtn">
+        <i class="fas fa-bell"></i>
+        <span class="badge">2</span>
+      </button>
+      <div class="user-avatar" onclick="location.href='profile.html'">
+        <img src="https://ui-avatars.com/api/?name=Ashutosh+Singh&background=ef4444&color=fff" alt="User">
+      </div>
+    </div>
   </nav>
+
+  <!-- NOTIFICATION DROPDOWN -->
+  <div class="notification-dropdown" id="notifDropdown">
+    <div class="notification-header">
+      <h4>Notifications</h4>
+      <button class="nav-icon-btn" style="font-size: 14px; color: var(--accent-color);">Mark all as read</button>
+    </div>
+    <div class="notification-item unread">
+      <h4>⚠️ High Risk Alert</h4>
+      <p>Increased activity reported near CP Inner Circle.</p>
+      <span class="text-xs" style="opacity: 0.6;">10 mins ago</span>
+    </div>
+    <div class="notification-item unread">
+      <h4>🚧 Construction Update</h4>
+      <p>Janpath road repairs scheduled tonight.</p>
+      <span class="text-xs" style="opacity: 0.6;">1 hour ago</span>
+    </div>
+  </div>
 
   <!-- PAGE -->
   <div class="page">
     <div class="layout">
 
       <!-- SIDEBAR -->
-      <aside class="sidebar">
-        <a href="#" class="side-btn danger"><i class="fas fa-triangle-exclamation"></i> Emergency Help</a>
+      <aside class="sidebar" id="sidebar">
+        <a href="emergency.html" class="side-btn danger"><i class="fas fa-triangle-exclamation"></i> Emergency Help</a>
         <a href="saftyMap.html" class="side-btn"><i class="fas fa-map-location-dot"></i> Safety Map</a>
         <a href="report.html" class="side-btn active"><i class="fas fa-file-pen"></i> Report Incident</a>
-        <a href="#" class="side-btn"><i class="fas fa-book-medical"></i> Safety Guide</a>
-        <a href="#" class="side-btn"><i class="fas fa-phone-flip"></i> Emergency Contacts</a>
+        <a href="guide.html" class="side-btn"><i class="fas fa-book-medical"></i> Safety Guide</a>
+        <a href="contact.html" class="side-btn"><i class="fas fa-phone-flip"></i> Emergency Contacts</a>
       </aside>
 
       <!-- CONTENT -->
       <main class="content">
 
+        <!-- LIVE TICKER -->
+        <div class="safety-ticker">
+          <span class="ticker-label"><i class="fas fa-tower-broadcast"></i> Live</span>
+          <div class="ticker-content">
+            <span>🚨 Pickpocketing activity reported near CP Inner Circle.</span>
+            <span>🚧 Road repairs on Janpath tonight. Drive safely.</span>
+            <span>✅ Metro Station Exit 2 verified as Safe Zone.</span>
+            <span>📢 New Safety Guide: 'Night Commute' now available.</span>
+          </div>
+        </div>
+
         <!-- HEADER -->
-        <section class="hero">
+        <section class="hero reveal">
           <h1>Report an Incident</h1>
           <p><i class="fas fa-hand-holding-hand"></i> Your anonymous report helps keep the community safe.</p>
           <span class="status caution"><i class="fas fa-user-shield"></i> Confidential & Verified</span>
         </section>
 
         <!-- REPORT FORM -->
-        <div class="report-container">
-          <form class="report-form" onsubmit="event.preventDefault(); alert('Report submitted successfully!');">
+        <div class="report-container reveal">
+          <form class="report-form">
 
             <div class="form-row">
               <div class="form-group">
@@ -123,7 +166,7 @@
           <li><a href="Homepage.html">Dashboard</a></li>
           <li><a href="saftyMap.html">Live Map</a></li>
           <li><a href="report.html">Report Incident</a></li>
-          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="guide.html">Safety Guide</a></li>
         </ul>
       </div>
       <div class="footer-contact">
@@ -138,6 +181,7 @@
     </div>
   </footer>
 
+  <script src="script.js"></script>
 </body>
 
 </html>
