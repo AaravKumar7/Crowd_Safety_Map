@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Profile | SafeZone</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+
+<body>
+
+    <!-- FLOATING SOS BUTTON -->
+    <button class="sos">SOS</button>
+
+    <!-- TOP NAVBAR -->
+    <nav class="top-nav">
+        <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
+        <div class="logo"><i class="fas fa-shield-halved"></i> SafeZone</div>
+        <div class="nav-links">
+            <a href="Homepage.html">Home</a>
+            <a href="saftyMap.html">Map</a>
+            <a href="report.html">Report</a>
+            <a href="profile.html" class="active">Profile</a>
+        </div>
+        <div class="nav-controls">
+            <div class="search-container">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search safety guides..." id="navSearch">
+            </div>
+            <button class="nav-icon-btn" id="notifBtn">
+                <i class="fas fa-bell"></i>
+                <span class="badge">2</span>
+            </button>
+            <div class="user-avatar" onclick="location.href='profile.html'">
+                <img src="https://ui-avatars.com/api/?name=Ashutosh+Singh&background=ef4444&color=fff" alt="User">
+            </div>
+        </div>
+    </nav>
+
+    <!-- NOTIFICATION DROPDOWN -->
+    <div class="notification-dropdown" id="notifDropdown">
+        <div class="notification-header">
+            <h4>Notifications</h4>
+            <button class="nav-icon-btn" style="font-size: 14px; color: var(--accent-color);">Mark all as read</button>
+        </div>
+        <div class="notification-item unread">
+            <h4>⚠️ High Risk Alert</h4>
+            <p>Increased activity reported near CP Inner Circle.</p>
+            <span class="text-xs" style="opacity: 0.6;">10 mins ago</span>
+        </div>
+        <div class="notification-item unread">
+            <h4>🚧 Construction Update</h4>
+            <p>Janpath road repairs scheduled tonight.</p>
+            <span class="text-xs" style="opacity: 0.6;">1 hour ago</span>
+        </div>
+    </div>
+
+    <!-- PAGE WRAPPER -->
+    <div class="page">
+        <div class="layout">
+
+            <!-- SIDEBAR -->
+            <aside class="sidebar" id="sidebar">
+                <a href="emergency.html" class="side-btn danger"><i class="fas fa-triangle-exclamation"></i> Emergency
+                    Help</a>
+                <a href="saftyMap.html" class="side-btn"><i class="fas fa-map-location-dot"></i> Safety Map</a>
+                <a href="report.html" class="side-btn"><i class="fas fa-file-pen"></i> Report Incident</a>
+                <a href="guide.html" class="side-btn"><i class="fas fa-book-medical"></i> Safety Guide</a>
+                <a href="contact.html" class="side-btn"><i class="fas fa-phone-flip"></i> Emergency Contacts</a>
+            </aside>
+
+            <!-- CONTENT -->
+            <main class="content">
+
+                <!-- LIVE TICKER -->
+                <div class="safety-ticker">
+                    <span class="ticker-label"><i class="fas fa-tower-broadcast"></i> Live</span>
+                    <div class="ticker-content">
+                        <span>🚨 Pickpocketing activity reported near CP Inner Circle.</span>
+                        <span>🚧 Road repairs on Janpath tonight. Drive safely.</span>
+                        <span>✅ Metro Station Exit 2 verified as Safe Zone.</span>
+                        <span>📢 New Safety Guide: 'Night Commute' now available.</span>
+                    </div>
+                </div>
+
+                <!-- HEADER -->
+                <section class="hero reveal">
+                    <h1>User Profile</h1>
+                    <p><i class="fas fa-user-circle"></i> Manage your safety settings and report history.</p>
+                </section>
+
+                <!-- PROFILE CONTENT -->
+                <div class="report-container reveal">
+                    <div class="report-form">
+                        <div style="display: flex; align-items: center; gap: 30px; margin-bottom: 40px;">
+                            <div
+                                style="width: 100px; height: 100px; border-radius: 50%; background: var(--secondary-bg); display: flex; align-items: center; justify-content: center; border: 2px solid var(--accent-color);">
+                                <i class="fas fa-user" style="font-size: 50px; color: var(--accent-color);"></i>
+                            </div>
+                            <div>
+                                <h2>Ashutosh Singh</h2>
+                                <p style="color: var(--text-secondary);">Premium Safety Member</p>
+                                <p style="color: var(--text-secondary); font-size: 14px;">Member since Jan 2026</p>
+                                <div class="mt-2">
+                                    <span class="status live"
+                                        style="background: rgba(34, 197, 94, 0.1); color: #22c55e;"><i
+                                            class="fas fa-shield-check"></i> Profile Verified</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SAFETY SCORE CARD -->
+                        <div class="card reveal"
+                            style="margin-bottom: 30px; background: rgba(239, 68, 68, 0.05); border: 2px solid var(--accent-color); padding: 25px;">
+                            <div class="flex-between">
+                                <div>
+                                    <h3 style="margin-bottom: 5px;">Personal Safety Score</h3>
+                                    <p style="font-size: 14px; opacity: 0.8;">Calculated from your verification history
+                                        and safe travels.</p>
+                                </div>
+                                <div style="font-size: 32px; font-weight: 800; color: var(--accent-color);">94/100</div>
+                            </div>
+                            <div
+                                style="width: 100%; height: 10px; background: rgba(255,255,255,0.1); border-radius: 5px; margin-top: 20px; overflow: hidden;">
+                                <div
+                                    style="width: 94%; height: 100%; background: var(--accent-color); border-radius: 5px; box-shadow: 0 0 15px var(--accent-color);">
+                                </div>
+                            </div>
+                        </div>
+
+                        <section>
+                            <h3>Account Settings</h3>
+                            <div class="form-group" style="margin-top: 20px;">
+                                <label>Email Address</label>
+                                <input type="email" value="ashutosh@example.com" disabled />
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Mobile Number</label>
+                                    <input type="text" value="+91 98765 43210" disabled />
+                                </div>
+                                <div class="form-group">
+                                    <label>Emergency Contact PIN</label>
+                                    <input type="password" value="********" disabled />
+                                </div>
+                            </div>
+                        </section>
+
+                        <section>
+                            <h3>Emergency Contacts</h3>
+                            <div class="card" style="padding: 15px; margin-top: 15px;">
+                                <div style="display: flex; justify-content: space-between; align-items: center;">
+                                    <div>
+                                        <h4 style="color: #ef4444;">Home (Dad)</h4>
+                                        <p style="font-size: 14px;">+91 99887 76655</p>
+                                    </div>
+                                    <i class="fas fa-pen" style="cursor: pointer; opacity: 0.6;"></i>
+                                </div>
+                            </div>
+                            <button class="filter-btn" style="margin-top: 20px; width: 100%;">+ Add New Emergency
+                                Contact</button>
+                        </section>
+
+                        <section style="margin-top: 40px;">
+                            <h3>Your Recent Reports</h3>
+                            <div class="card" style="margin-top: 15px; opacity: 0.7;">
+                                <p style="font-size: 14px;">No recent reports found. Your community contributions will
+                                    appear here.</p>
+                            </div>
+                        </section>
+
+                        <button class="submit-btn" style="margin-top: 40px; background: var(--secondary-bg);">Logout
+                            Account</button>
+                    </div>
+                </div>
+
+            </main>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h3>SafeZone</h3>
+                <p>Your journey, made safer through community collaboration.</p>
+            </div>
+            <div class="footer-nav">
+                <h4>Navigation</h4>
+                <ul class="footer-links">
+                    <li><a href="Homepage.html">Home</a></li>
+                    <li><a href="saftyMap.html">Safety Map</a></li>
+                    <li><a href="report.html">Report Incident</a></li>
+                    <li><a href="guide.html">Safety Guide</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 SafeZone. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
