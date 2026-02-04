@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Emergency Help | SafeZone</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+
+<body>
+
+    <!-- FLOATING SOS BUTTON -->
+    <button class="sos">SOS</button>
+
+    <!-- TOP NAVBAR -->
+    <nav class="top-nav">
+        <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
+        <div class="logo"><i class="fas fa-shield-halved"></i> SafeZone</div>
+        <div class="nav-links">
+            <a href="Homepage.html">Home</a>
+            <a href="saftyMap.html">Map</a>
+            <a href="report.html">Report</a>
+            <a href="profile.html">Profile</a>
+        </div>
+        <div class="nav-controls">
+            <div class="search-container">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search safety guides..." id="navSearch">
+            </div>
+            <button class="nav-icon-btn" id="notifBtn">
+                <i class="fas fa-bell"></i>
+                <span class="badge">2</span>
+            </button>
+            <div class="user-avatar" onclick="location.href='profile.html'">
+                <img src="https://ui-avatars.com/api/?name=Ashutosh+Singh&background=ef4444&color=fff" alt="User">
+            </div>
+        </div>
+    </nav>
+
+    <!-- NOTIFICATION DROPDOWN -->
+    <div class="notification-dropdown" id="notifDropdown">
+        <div class="notification-header">
+            <h4>Notifications</h4>
+            <button class="nav-icon-btn" style="font-size: 14px; color: var(--accent-color);">Mark all as read</button>
+        </div>
+        <div class="notification-item unread">
+            <h4>⚠️ High Risk Alert</h4>
+            <p>Increased activity reported near CP Inner Circle.</p>
+            <span class="text-xs" style="opacity: 0.6;">10 mins ago</span>
+        </div>
+        <div class="notification-item unread">
+            <h4>🚧 Construction Update</h4>
+            <p>Janpath road repairs scheduled tonight.</p>
+            <span class="text-xs" style="opacity: 0.6;">1 hour ago</span>
+        </div>
+    </div>
+
+    <!-- PAGE WRAPPER -->
+    <div class="page">
+        <div class="layout">
+
+            <!-- SIDEBAR -->
+            <aside class="sidebar" id="sidebar">
+                <a href="emergency.html" class="side-btn danger active"><i class="fas fa-triangle-exclamation"></i>
+                    Emergency Help</a>
+                <a href="saftyMap.html" class="side-btn"><i class="fas fa-map-location-dot"></i> Safety Map</a>
+                <a href="report.html" class="side-btn"><i class="fas fa-file-pen"></i> Report Incident</a>
+                <a href="guide.html" class="side-btn"><i class="fas fa-book-medical"></i> Safety Guide</a>
+                <a href="contact.html" class="side-btn"><i class="fas fa-phone-flip"></i> Emergency Contacts</a>
+            </aside>
+
+            <!-- CONTENT -->
+            <main class="content">
+
+                <!-- LIVE TICKER -->
+                <div class="safety-ticker">
+                    <span class="ticker-label"><i class="fas fa-tower-broadcast"></i> Live</span>
+                    <div class="ticker-content">
+                        <span>🚨 Pickpocketing activity reported near CP Inner Circle.</span>
+                        <span>🚧 Road repairs on Janpath tonight. Drive safely.</span>
+                        <span>✅ Metro Station Exit 2 verified as Safe Zone.</span>
+                        <span>📢 New Safety Guide: 'Night Commute' now available.</span>
+                    </div>
+                </div>
+
+                <!-- HEADER -->
+                <section class="hero reveal">
+                    <h1 style="color: #ef4444;">EMERGENCY HELP</h1>
+                    <p><i class="fas fa-bolt"></i> Immediate actions to keep you safe in critical situations.</p>
+                    <span class="status live"><i class="fas fa-radiation"></i> CRITICAL MODE ACTIVE</span>
+                </section>
+
+                <!-- EMERGENCY ACTIONS -->
+                <section class="reveal">
+                    <div class="card-grid reveal-group">
+                        <div class="card"
+                            style="border-color: #ef4444; background: rgba(239, 68, 68, 0.05); text-align: center; padding: 40px;"
+                            onclick="document.querySelector('.sos').click()">
+                            <i class="fas fa-bullhorn"
+                                style="font-size: 50px; color: #ef4444; margin-bottom: 20px;"></i>
+                            <h2>Trigger Loud Alarm</h2>
+                            <p>Attract attention and deter aggressors immediately.</p>
+                            <span class="status live" style="margin-top: 15px;">Active Speaker</span>
+                        </div>
+                        <div class="card" style="border-color: #f59e0b; text-align: center; padding: 40px;"
+                            onclick="alert('Live location shared with 5 closest police patrols.')">
+                            <i class="fas fa-share-nodes"
+                                style="font-size: 50px; color: #f59e0b; margin-bottom: 20px;"></i>
+                            <h2>Broadcast Location</h2>
+                            <p>Send your real-time GPS to authorities and contacts.</p>
+                            <span class="status live" style="margin-top: 15px;">Satellite Sync</span>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2><i class="fas fa-phone-volume"></i> Quick Dial</h2>
+                    <div class="card-grid">
+                        <a href="tel:100" class="side-btn danger"
+                            style="justify-content: center; height: 80px; font-size: 20px;">
+                            <i class="fas fa-shield-halved"></i> Call PCR (100)
+                        </a>
+                        <a href="tel:102" class="side-btn"
+                            style="justify-content: center; height: 80px; font-size: 20px; border-color: #22c55e; color: #22c55e;">
+                            <i class="fas fa-ambulance"></i> Call Ambulance (102)
+                        </a>
+                    </div>
+                </section>
+
+                <section>
+                    <div class="card">
+                        <h3><i class="fas fa-lightbulb"></i> Immediate Steps</h3>
+                        <ul style="margin: 20px 0; padding-left: 20px; color: var(--text-secondary);">
+                            <li style="margin-bottom: 10px;">Move towards the nearest shop or well-lit public space.
+                            </li>
+                            <li style="margin-bottom: 10px;">Avoid turning into empty alleys or parks.</li>
+                            <li style="margin-bottom: 10px;">Keep your back against a wall if you must stop.</li>
+                            <li>Fake a phone call or use SafeZone "Fake Call" feature (Coming Soon).</li>
+                        </ul>
+                    </div>
+                </section>
+
+            </main>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-bottom">
+            &copy; 2026 SafeZone. Stay Protected.
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
